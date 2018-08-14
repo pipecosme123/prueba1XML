@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+* and open the template in the editor.
+ */
+package Modelo;
+
+import java.util.LinkedList;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Usuario
+ */
+public class Estudiantes extends Persona {
+    
+    private String codigo;
+    private String carrera;
+
+    public Estudiantes() {
+    }
+    
+    public Estudiantes(String codigo, String nombre, String carrera, String telefono, String correo) {
+        super(nombre, telefono, correo);
+        this.codigo = codigo;
+        this.carrera = carrera;
+    }
+
+    public Estudiantes(String codigo, String carrera) {
+        this.codigo = codigo;
+        this.carrera = carrera;
+    }
+    
+    public String getCarrera() {
+        return carrera;
+    }
+    
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+    
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ";" + codigo + ";" + carrera;
+    }
+    
+    public void desplegar(){
+        System.out.println(codigo + " " + nombre + " " + carrera + " " + telefono + " " + correo);
+    }
+    
+    public boolean BuscarPersona(LinkedList<Estudiantes> ListaEstudiantes){
+        boolean busqueda = false;
+        String buscar = JOptionPane.showInputDialog("Ingrese el estudiante a buscar");
+        
+        for (int i = 0; i < ListaEstudiantes.size(); i++) {
+            if(buscar.equals(ListaEstudiantes.get(i).codigo)){
+                busqueda = true;
+                JOptionPane.showMessageDialog(null, ListaEstudiantes.get(i));
+                break;
+            }       
+        }        
+        return busqueda;
+    }
+}
