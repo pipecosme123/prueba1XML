@@ -5,8 +5,16 @@
  */
 package Modelo;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+
 
 /**
  *
@@ -68,5 +76,37 @@ public class Estudiantes extends Persona {
             }       
         }        
         return busqueda;
+    }
+
+    public boolean crearArchivoXML(LinkedList<Estudiantes> listaE) {
+        boolean g = false;
+            
+        try {
+            Element universidad = new Element("universidad");
+            Document doc = new Document(universidad);
+            
+            for (int i = 0; i < listaE.size(); i++) {
+                Element estudiante = new Element("estudiante");
+                estudiante.addContent(new Element("nombre").setText(listaE.get(i).getNombre()));
+                estudiante.addContent(new Element("telefono").setText(listaE.get(i).getTelefono()));
+                estudiante.addContent(new Element("correo").setText(listaE.get(i).getCorreo()));
+                estudiante.addContent(new Element("codigo").setText(listaE.get(i).getCodigo()));
+                estudiante.addContent(new Element("carrera").setText(listaE.get(i).getCarrera()));
+                
+                doc.getRootElement().addContent(estudiante);               
+            }
+            XMLOutputter xmlOutput = new XMLOutputter();
+            xmlOutput.setFormat(Format.getPrettyFormat());
+            xmlOutput.output(doc, new FileWriter("universidad.xml"));
+            
+            g = true;
+            
+            System.out.println("Archivo Creado");
+        } catch(IOException io){
+            System.out.println(io.getMessage());
+            g=false;
+        }
+        
+        return g;
     }
 }

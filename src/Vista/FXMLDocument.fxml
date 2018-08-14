@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prueba1.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="351.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="prueba1.FXMLDocumentController">
+   <children>
+      <Label layoutX="56.0" layoutY="74.0" text="Nombre :" />
+      <Label layoutX="57.0" layoutY="113.0" text="Telefono:" />
+      <Label layoutX="67.0" layoutY="153.0" text="Correo:" />
+      <Label layoutX="66.0" layoutY="190.0" text="Codigo:" />
+      <Label layoutX="66.0" layoutY="234.0" text="Carrera:" />
+      <TextField fx:id="txtNombre" layoutX="151.0" layoutY="70.0" />
+      <TextField fx:id="txtTelefono" layoutX="151.0" layoutY="109.0" />
+      <TextField fx:id="txtCorreo" layoutX="151.0" layoutY="149.0" />
+      <TextField fx:id="txtCodigo" layoutX="151.0" layoutY="190.0" />
+      <TextField fx:id="txtCarrera" layoutX="151.0" layoutY="230.0" />
+      <Button fx:id="btnAgregar" layoutX="28.0" layoutY="284.0" mnemonicParsing="false" onAction="#AgregarEstudiante" text="Agregar Estudiantes" />
+      <Button fx:id="btnGuardar" layoutX="193.0" layoutY="284.0" mnemonicParsing="false" onAction="#guardarXML" text="Guardar ArchivoXML" />
+      <Text layoutX="38.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregar Estudiantes">
+         <font>
+            <Font name="Arial Narrow" size="37.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

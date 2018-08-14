@@ -19,7 +19,7 @@ public class Prueba1 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/vista/FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Vista/FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
         

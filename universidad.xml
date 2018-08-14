@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<universidad>
+  <estudiante>
+    <nombre>Daniel</nombre>
+    <telefono>12345</telefono>
+    <correo>danito</correo>
+    <codigo>123456</codigo>
+    <carrera>multimedia</carrera>
+  </estudiante>
+  <estudiante>
+    <nombre>Felipe</nombre>
+    <telefono>147852</telefono>
+    <correo>felipi</correo>
+    <codigo>963258</codigo>
+    <carrera>turismo</carrera>
+  </estudiante>
+</universidad>
